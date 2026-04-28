@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+/* ─── NSS Brand Variables ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --nss-red:        #800020;
+  --nss-red-dark:   #600018;
+  --nss-black:      #000000;
+  --nss-dark:       #111111;
+  --nss-dark-2:     #1a1a1a;
+  --nss-white:      #ffffff;
+  --nss-gray:       #888888;
+  --nss-gray-light: #cccccc;
+  --nss-zinc:       #222222;
+
+  /* Typography */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Layout */
+  --nav-height:      70px;
+  --tabs-height:     55px;
+  --max-width:       1200px;
+  --section-padding: 5rem 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--nss-black);
+  color: var(--nss-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
 }

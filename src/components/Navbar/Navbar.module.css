@@ -1,0 +1,241 @@
+/* ─── Navbar ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background-color: var(--nss-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid var(--nss-zinc);
+}
+
+/* ─── Logo Side ─── */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 44px;
+  width: auto;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nss-white);
+}
+
+/* ─── Menu Button ─── */
+.menuBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menuLabel {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--nss-white);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--nss-white);
+  transition: all 0.3s ease;
+}
+
+/* ─── Full Screen Menu ─── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--nss-dark);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--nav-height) + 2rem) 3rem 3rem;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── Menu Inner Layout ─── */
+.menuInner {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 3rem;
+  height: 100%;
+}
+
+.divider {
+  background-color: var(--nss-zinc);
+  width: 1px;
+}
+
+/* ─── Reviews Side ─── */
+.sectionLabel {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--nss-red);
+  margin-bottom: 2rem;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.reviewCategory h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--nss-white);
+  margin-bottom: 1rem;
+}
+
+.reviewCategory ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.reviewCategory ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reviewCategory ul li::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--nss-red);
+  flex-shrink: 0;
+}
+
+.reviewCategory ul li a {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nss-gray-light);
+  transition: color 0.2s ease;
+}
+
+.reviewCategory ul li a:hover {
+  color: var(--nss-white);
+}
+
+/* ─── Explore Side ─── */
+.exploreLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.exploreLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--nss-zinc);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--nss-white);
+  transition: color 0.2s ease;
+}
+
+.exploreLink:hover {
+  color: var(--nss-red);
+}
+
+.exploreLink span {
+  font-size: 1.2rem;
+  color: var(--nss-gray);
+}
+
+.basedIn {
+  margin-top: 2rem;
+}
+
+.basedIn p:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--nss-red);
+  margin-bottom: 0.5rem;
+}
+
+.basedIn p:last-child {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--nss-gray);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .logoText {
+    display: none;
+  }
+
+  .menuInner {
+    grid-template-columns: 1fr;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .exploreLink {
+    font-size: 1.5rem;
+  }
+
+  .overlay {
+    padding: calc(var(--nav-height) + 1rem) 1.5rem 2rem;
+  }
+}
