@@ -1,0 +1,138 @@
+/* ─── Footer ─── */
+.footer {
+  width: 100%;
+  background-color: var(--nss-dark);
+  border-top: 1px solid var(--nss-zinc);
+}
+
+.footerMain {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* ─── Logo Block ─── */
+.logoBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoImg {
+  height: 60px;
+  width: auto;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.logoName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nss-white);
+}
+
+.logoLocation {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--nss-gray);
+}
+
+/* ─── Tagline Block ─── */
+.taglineBlock {
+  text-align: center;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--nss-gray);
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ─── Social Block ─── */
+.socialBlock {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.socialBtn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--nss-zinc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nss-gray);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialBtn:hover {
+  border-color: var(--nss-red);
+  color: var(--nss-red);
+}
+
+/* ─── Footer Bottom ─── */
+.footerBottom {
+  border-top: 1px solid var(--nss-zinc);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.copyright {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nss-gray);
+}
+
+.domain {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nss-gray);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .footerMain {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .logoBlock {
+    justify-content: center;
+  }
+
+  .socialBlock {
+    justify-content: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

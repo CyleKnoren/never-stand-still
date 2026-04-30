@@ -1,0 +1,44 @@
+/* ─── Tabs Bar ─── */
+.tabsBar {
+  width: 100%;
+  background-color: var(--nss-white);
+  display: flex;
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--nss-black);
+  text-decoration: none;
+  border-right: 1px solid var(--nss-red);
+  transition: all 0.2s ease;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab:hover {
+  background-color: var(--nss-red);
+  color: var(--nss-white);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .tab {
+    font-size: 0.65rem;
+    padding: 1rem 0.5rem;
+    letter-spacing: 0.1em;
+  }
+}
