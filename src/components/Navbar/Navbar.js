@@ -4,25 +4,45 @@ import Link from 'next/link'
 import styles from './Navbar.module.css'
 
 const reviewCategories = [
-  {
+{
     label: 'Trails',
-    links: ['MTB', 'Hiking', 'Climbing', 'Water'],
-    base: '/reviews/trails'
+    base: '/reviews/trails',
+    links: [
+      { label: 'MTB', href: '/reviews/trails?filter=mtb' },
+      { label: 'Hiking', href: '/reviews/trails?filter=hiking' },
+      { label: 'Climbing', href: '/reviews/trails?filter=climbing' },
+      { label: 'Water', href: '/reviews/trails?filter=water' },
+    ]
   },
-  {
+{
     label: 'Gear',
-    links: ['Apparel', 'Backpacks', 'Tech', 'Camping', 'Cooking', 'Gadgets'],
-    base: '/reviews/gear'
+    base: '/reviews/gear',
+    links: [
+      { label: 'Apparel', href: '/reviews/gear?filter=apparel' },
+      { label: 'Backpacks', href: '/reviews/gear?filter=backpacks' },
+      { label: 'Tech', href: '/reviews/gear?filter=tech' },
+      { label: 'Camping', href: '/reviews/gear?filter=camping' },
+      { label: 'Cooking', href: '/reviews/gear?filter=cooking' },
+      { label: 'Gadgets', href: '/reviews/gear?filter=gadgets' },
+    ]
   },
-  {
+{
     label: 'Media',
-    links: ['Movies', 'Books', 'Podcasts'],
-    base: '/reviews/media'
+    base: '/reviews/media',
+    links: [
+      { label: 'Movies', href: '/reviews/media?filter=movies' },
+      { label: 'Books', href: '/reviews/media?filter=books' },
+      { label: 'Podcasts', href: '/reviews/media?filter=podcasts' },
+    ]
   },
-  {
-    label: 'Adventure Racing',
-    links: ['Races'],
-    base: '/reviews/adventure-racing'
+{
+    label: 'Races',
+    base: '/reviews/adventure-racing',
+    links: [
+      { label: 'MTB Series', href: '/reviews/adventure-racing?filter=mtb-series' },
+      { label: 'Running', href: '/reviews/adventure-racing?filter=running' },
+      { label: 'Adventure Racing', href: '/reviews/adventure-racing?filter=races' },
+    ]
   },
 ]
 
@@ -81,15 +101,18 @@ export default function Navbar() {
             <div className={styles.reviewsGrid}>
               {reviewCategories.map((cat) => (
                 <div key={cat.label} className={styles.reviewCategory}>
-                  <h3>{cat.label}</h3>
+                  {/* Clickable category header */}
+                  <h3>
+                    <Link href={cat.base} onClick={close}>
+                      {cat.label}
+                    </Link>
+                  </h3>
+                  {/* Subcategory links */}
                   <ul>
                     {cat.links.map((link) => (
-                      <li key={link}>
-                        <Link
-                          href={`${cat.base}/${link.toLowerCase().replace(' ', '-')}`}
-                          onClick={close}
-                        >
-                          {link}
+                      <li key={link.label}>
+                        <Link href={link.href} onClick={close}>
+                          {link.label}
                         </Link>
                       </li>
                     ))}
