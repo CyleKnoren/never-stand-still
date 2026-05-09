@@ -15,7 +15,7 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background-image: url('/hero-placeholder.jpg');
+  background-image: url('/hero.jpeg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -40,7 +40,7 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 0 4rem;
   display: flex;
   align-items: center;
   gap: 4rem;
@@ -48,9 +48,10 @@
 
 /* ─── Logo Circle ─── */
 .heroLogo {
-  width: 220px;
-  height: 220px;
+  width: 400px;
+  height: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 /* ─── Text Block ─── */
